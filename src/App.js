@@ -17,7 +17,7 @@ const business = {
   reviewCount: 90,
 };
 
-const businesses = Array.from({ length: 6 }, () => business);
+const businesses = Array.from({ length: 9 }, () => business);
 
 function App() {
   return (
