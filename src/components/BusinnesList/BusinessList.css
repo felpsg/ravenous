@@ -2,5 +2,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 20px 0;
+  margin: 30px 130px;
+  align-items: flex-start;
 }

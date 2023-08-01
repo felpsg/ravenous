@@ -1,9 +1,11 @@
 .Business {
   border: 1px solid #ddd;
-  margin-bottom: 20px;
+  border-radius: 5px;
+  margin: 10px;
   padding: 20px;
   width: 300px;
 }
+
 
 .Business h2 {
   margin: 0 0 10px 0;
@@ -29,3 +31,5 @@
   justify-content: space-between;
   margin-top: 10px;
 }
+
+
