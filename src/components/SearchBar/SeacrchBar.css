@@ -1,0 +1,38 @@
+.SearchBar {
+  background-color: #d32323;
+  display: flex;
+  justify-content: center;
+  height: 65px;
+  width: 100%;
+}
+
+.SearchBar h1 {
+  color: #fff;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.SearchBar .SearchBar-input {
+  display: flex;
+  height: 35px;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.SearchBar .SearchBar-input > input {
+  width: 75%;
+}
+
+.SearchBar .SearchBar-submit {
+  background: #00a680;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  height: 100%;
+  padding: 0 20px;
+}
+
+.SearchBar .SearchBar-submit:hover {
+  background: #008357;
+}

@@ -1,0 +1,31 @@
+.Business {
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  padding: 20px;
+  width: 300px;
+}
+
+.Business h2 {
+  margin: 0 0 10px 0;
+}
+
+.Business img {
+  height: 180px;
+  width: 100%;
+}
+
+.Business .Business-information {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Business .Business-address {
+  color: #666;
+}
+
+.Business .Business-reviews {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
