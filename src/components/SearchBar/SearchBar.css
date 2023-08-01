@@ -1,0 +1,102 @@
+.SearchBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  width: 100%;
+  border-radius: 10px;
+  background-image: url('./culinaria.jpg'); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; 
+}
+
+.SearchBar-sort-options {
+  position: relative;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.SearchBar-sort-options::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 45%;
+  transform: translateX(-50%);
+  height: 1px;
+  background: #000;
+  width: 100%; /* Change this value to increase or decrease the width */
+}
+
+
+
+.SearchBar-sort-options ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.SearchBar-sort-options li {
+  margin-right: 60px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #fff;
+  text-transform: uppercase;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s, border-bottom-color 0.3s;
+  letter-spacing: 1px;
+
+}
+
+.SearchBar-sort-options li.active {
+  /* color: #fff; */
+  border-bottom-color: #d32323;
+}
+
+.SearchBar-fields {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.SearchBar-fields input {
+  width: 45%; /* adjusted the width */
+  padding: 12px 80px;
+  font-size: 16px;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+  margin: 20px 15px;
+}
+
+.SearchBar-fields input::placeholder {
+  color: #999;
+}
+
+.SearchBar-fields input:focus {
+  border-color: #d32323;
+}
+
+.SearchBar-submit {
+  display: flex;
+  gap: 10px;
+}
+
+.SearchBar-submit button {
+  padding: 12px 20px;
+  background-color: #d32323;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+}
+
+.SearchBar-submit button:hover {
+  background-color: #a21c1c;
+}

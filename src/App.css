@@ -1,10 +1,15 @@
-/* Reset some default styles of browsers */
+/* Import Roboto from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@500&display=swap');
+
 body, h1, p, a {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif; /* Agora Roboto é a fonte padrão */
   text-decoration: none;
 }
+
 
 /* Define styles for your app */
 .App {
@@ -14,68 +19,19 @@ body, h1, p, a {
 }
 
 h1 {
-  color: #d32323; /* Yelp's brand color */
+  color: #fff;
   font-size: 3em;
-  margin-top: 0.1em;
-  margin-bottom: 8rem;
-  background-color: yellow;
-}
-
-/* SearchBar styles */
-.SearchBar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 2em;
-}
-
-.SearchBar input {
-  margin: 0.5em;
-  padding: 0.5em;
-  font-size: 1em;
-}
-
-.SearchBar .SearchBar-submit a {
-  color: white;
-  background-color: #d32323; /* Yelp's brand color */
-  padding: 1em;
-  border-radius: 4px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.SearchBar .SearchBar-submit a:hover {
-  background-color: #e63946; /* A lighter shade of Yelp's brand color for hover effect */
-}
-
-/* BusinessList styles */
-.BusinessList {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-/* Business styles */
-.Business {
-  width: 300px;
-  margin: 1em;
-  padding: 1em;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
-
-.Business img {
+  margin: 0;
+  padding: 13px;
+  background-color: #d32323;
   width: 100%;
-  height: auto;
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 550;
+  letter-spacing: 1px;
+  font-family: 'Edu SA Beginner', cursive;
 }
 
-.Business h2, .Business p {
-  margin: 0.5em 0;
-}
+/* searchbar */
 
-.Business a {
-  color: #d32323; /* Yelp's brand color */
-}
 
-.Business a:hover {
-  color: #e63946; /* A lighter shade of Yelp's brand color for hover effect */
-}
