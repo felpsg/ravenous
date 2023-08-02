@@ -40,7 +40,6 @@ Para rodar o projeto localmente, siga estas etapas:
 6. Acesse o aplicativo em seu navegador em `http://localhost:3000`.
 
 **Importante**:  O arquivo `.env` é ignorado por padrão pelo arquivo `.gitignore` para evitar que suas chaves sejam adicionadas ao controle de versão.
-<<<<<<< HEAD
 
 ## Utilizando o CORS Anywhere
 
@@ -50,15 +49,9 @@ Para utilizar o CORS Anywhere com o aplicativo Ravenoso, siga os seguintes passo
 
 1. Acesse o [link](https://cors-anywhere.herokuapp.com/corsdemo) do demo do CORS Anywhere.
 2. Clique no botão "Request temporary access to the demo server" para ter acesso temporário ao servidor demo.
-3. No seu projeto, certifique-se de adicionar `https://cors-anywhere.herokuapp.com/` antes da URL da API que você está tentando acessar. Por exemplo, a sua requisição para a API do Yelp deve ficar algo como:
-
-```javascript
-fetch('https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=pizza&location=boston')
-```
+3. No seu projeto, certifique-se de adicionar `https://cors-anywhere.herokuapp.com/` antes da URL da API que você está tentando acessar. 
 
 **Nota**: Tenha em mente que este é um serviço gratuito e pode haver limitações de uso. Além disso, esse método deve ser usado apenas para fins de desenvolvimento e testes. É fortemente recomendável implementar a sua própria solução de proxy para evitar problemas de CORS em um ambiente de produção.
-=======
->>>>>>> 8f168862286d83ba238d617ca652fbfafdd39856
 
 ## Contato
 
