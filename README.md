@@ -1,6 +1,7 @@
 # Ravenoso
 
-Ravenoso é um aplicativo de recomendação de restaurantes, inspirado na funcionalidade principal do Yelp.
+O Ravenoso é um aplicativo de recomendação de restaurantes, inspirado na funcionalidade principal do Yelp. Este aplicativo foi desenvolvido como um projeto de aprendizado para prática das tecnologias de desenvolvimento web modernas.
+
 ## Demonstração ao Vivo
 
 Você pode ver o aplicativo em funcionamento aqui: [Link do Projeto](https://raveneous.netlify.app/)  
@@ -29,8 +30,16 @@ Para rodar o projeto localmente, siga estas etapas:
 
 1. Clone o repositório para o seu computador local.
 2. Instale as dependências necessárias com `npm install`.
-3. Inicie o servidor de desenvolvimento com `npm start`.
-4. Acesse o aplicativo em seu navegador em `http://localhost:3000`.
+3. Crie um arquivo `.env` na raiz do projeto.
+4. Adicione a sua chave da API do Yelp ao arquivo `.env` com o seguinte formato:
+
+    - REACT_APP_API_KEY='sua-chave-api-aqui'  
+    - Substitua 'sua-chave-api-aqui' pela sua chave de API real. Note que você precisará obter sua própria chave de API do Yelp ao se inscrever para um novo aplicativo no [portal de desenvolvedores do Yelp](https://www.yelp.com/developers/v3/manage_app).
+
+5. Inicie o servidor de desenvolvimento com `npm start`.
+6. Acesse o aplicativo em seu navegador em `http://localhost:3000`.
+
+**Importante**:  O arquivo `.env` é ignorado por padrão pelo arquivo `.gitignore` para evitar que suas chaves sejam adicionadas ao controle de versão.
 
 ## Contato
 
