@@ -2,12 +2,16 @@ import React from 'react';
 import './BusinessList.css';
 import Business from '../Business/Business';
 
-const BusinessList = ({ businesses }) => (
-  <div className="BusinessList">
-    {businesses.map((business, index) => {
-      return <Business key={index} business={business} />;
-    })}
-  </div>
-);
+function BusinessList({ businesses }) {
+  return (
+    <div className="BusinessList">
+      {businesses
+        ? businesses.map((business, index) => {
+            return <Business business={business} key={index} />;
+          })
+        : null}
+    </div>
+  );
+}
 
 export default BusinessList;

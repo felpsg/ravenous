@@ -13,21 +13,22 @@
 
 .SearchBar-sort-options {
   position: relative;
+  width: 100%;
   margin-bottom: 10px;
   padding-bottom: 10px;
 }
+
 
 .SearchBar-sort-options::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 45%;
+  left: 47%;
   transform: translateX(-50%);
   height: 1px;
-  background: #000;
-  width: 100%; /* Change this value to increase or decrease the width */
+  background: #fff;
+  width: 50%; 
 }
-
 
 
 .SearchBar-sort-options ul {
@@ -46,7 +47,7 @@
   border-bottom: 2px solid transparent;
   transition: color 0.3s, border-bottom-color 0.3s;
   letter-spacing: 1px;
-
+  font-weight: bold;
 }
 
 .SearchBar-sort-options li.active {
@@ -70,6 +71,7 @@
   outline: none;
   transition: border-color 0.3s;
   margin: 20px 15px;
+  font-style: italic;
 }
 
 .SearchBar-fields input::placeholder {

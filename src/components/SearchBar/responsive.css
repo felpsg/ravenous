@@ -1,0 +1,44 @@
+@media (max-width: 600px) {
+  .SearchBar input {
+    font-size: 14px;
+    width: 80%;
+  }
+
+  .SearchBar-sort-options::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 43%;
+    transform: translateX(-50%);
+    height: 1px;
+    background: #fff;
+    width: 80%; 
+  }
+
+  .SearchBar {
+    flex-direction: column;
+  }
+
+  .SearchBar-sort-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-left: 70px;
+  }
+  
+  .SearchBar-sort-options ul {
+    justify-content: space-around;
+  }
+
+  .SearchBar-submit button {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+.SearchBar-fields input {
+  padding: 12px 3px;
+}
+

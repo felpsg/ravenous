@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './SearchBar.css';
+import './responsive.css';
+
 
 const SearchBar = ({ searchYelp }) => {
   const [term, setTerm] = useState('');
@@ -21,6 +23,9 @@ const SearchBar = ({ searchYelp }) => {
 
   const handleSortByChange = (sortOptionKey) => {
     setSortBy(sortOptions[sortOptionKey]);
+    if (term && location) {
+      searchYelp(term, location, sortOptions[sortOptionKey]);
+    }
   };
 
   const handleTermChange = (event) => {
@@ -36,6 +41,13 @@ const SearchBar = ({ searchYelp }) => {
     event.preventDefault();
   };
 
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      searchYelp(term, location, sortBy);
+      event.preventDefault();
+    }
+  };
+
   return (
     <div className="SearchBar">
       <div className="SearchBar-sort-options">
@@ -46,7 +58,7 @@ const SearchBar = ({ searchYelp }) => {
               <li
                 className={getSortByClass(sortOptionKey)}
                 key={sortByOptionValue}
-                onClick={handleSortByChange.bind(this, sortOptionKey)}
+                onClick={() => handleSortByChange(sortOptionKey)}
               >
                 {sortOptionKey}
               </li>
@@ -55,8 +67,16 @@ const SearchBar = ({ searchYelp }) => {
         </ul>
       </div>
       <div className="SearchBar-fields">
-        <input placeholder="Search Businesses" onChange={handleTermChange} />
-        <input placeholder="Where?" onChange={handleLocationChange} />
+        <input
+          placeholder="Search...ex: bar"
+          onChange={handleTermChange}
+          onKeyPress={handleKeyPress}
+        />
+        <input
+          placeholder="Location... ex: New York"
+          onChange={handleLocationChange}
+          onKeyPress={handleKeyPress}
+        />
       </div>
       <div className="SearchBar-submit">
         <button onClick={handleSearch}>Let's Go</button>

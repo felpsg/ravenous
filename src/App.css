@@ -1,20 +1,28 @@
 /* Import Roboto from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@500&display=swap');
+
+body.light {
+  --text-color: #181A1B;
+  --background-color: #fff;
+}
+
+body.dark {
+  --text-color: #fff;
+  --background-color: #181A1B
+}
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', Arial, sans-serif; /* Agora Roboto é a fonte padrão */
+  font-family: 'Roboto', Arial, sans-serif;
   text-decoration: none;
-  width: 100%; /* Garante que o corpo não exceda os limites da janela */
-  overflow-x: hidden; /* Esconde qualquer conteúdo que ultrapasse o limite horizontal */
+  width: 100%;
+  overflow-x: hidden;
+  color: var(--text-color);
+  background-color: var(--background-color);
 }
 
-
-
-/* Define styles for your app */
 .App {
   display: flex;
   flex-direction: column;
@@ -22,7 +30,6 @@ body {
 }
 
 h1 {
-  color: #fff;
   font-size: 3em;
   margin: 0;
   padding: 13px;
@@ -35,6 +42,18 @@ h1 {
   font-family: 'Edu SA Beginner', cursive;
 }
 
-/* searchbar */
-
-
+.theme-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #d32323;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 550;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
