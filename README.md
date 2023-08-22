@@ -1,6 +1,6 @@
 # Ravenoso
 
-O Ravenoso é um aplicativo de recomendação de restaurantes, inspirado na funcionalidade principal do Yelp. Este aplicativo foi desenvolvido como um projeto de aprendizado para prática das tecnologias de desenvolvimento web modernas.
+Ravenoso é um aplicativo de recomendação de restaurantes, inspirado na funcionalidade principal do Yelp. Este aplicativo foi desenvolvido como um projeto de aprendizado para prática das tecnologias de desenvolvimento web modernas.
 
 ## Demonstração ao Vivo
 
