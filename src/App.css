@@ -3,13 +3,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@500&display=swap');
 
 body.light {
-  --text-color: #181A1B;
+  --text-color: #181a1b;
   --background-color: #fff;
 }
 
 body.dark {
   --text-color: #fff;
-  --background-color: #181A1B
+  --background-color: #181a1b;
 }
 
 body {
@@ -33,7 +33,8 @@ h1 {
   font-size: 3em;
   margin: 0;
   padding: 13px;
-  background-color: #d32323;
+  background: radial-gradient(circle, red, black);
+  color: #fff;
   width: 100%;
   text-align: center;
   font-size: 1.7rem;

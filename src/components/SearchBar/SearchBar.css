@@ -5,10 +5,10 @@
   padding: 50px;
   width: 100%;
   border-radius: 10px;
-  background-image: url('./culinaria.jpg'); 
+  background-image: url('./culinaria.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center; 
+  background-position: center;
 }
 
 .SearchBar-sort-options {
@@ -18,7 +18,6 @@
   padding-bottom: 10px;
 }
 
-
 .SearchBar-sort-options::after {
   content: '';
   position: absolute;
@@ -27,9 +26,8 @@
   transform: translateX(-50%);
   height: 1px;
   background: #fff;
-  width: 50%; 
+  width: 50%;
 }
-
 
 .SearchBar-sort-options ul {
   list-style: none;
@@ -62,7 +60,7 @@
 }
 
 .SearchBar-fields input {
-  padding: 12px 23px !  important;
+  padding: 12px 25px !important;
   font-size: 16px;
   color: #333;
   border: 1px solid #ccc;
