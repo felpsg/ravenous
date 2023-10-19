@@ -62,8 +62,7 @@
 }
 
 .SearchBar-fields input {
-  width: 45%; /* adjusted the width */
-  padding: 12px 80px;
+  padding: 12px 23px !  important;
   font-size: 16px;
   color: #333;
   border: 1px solid #ccc;

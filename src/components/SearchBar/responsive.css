@@ -1,7 +1,7 @@
 @media (max-width: 600px) {
   .SearchBar input {
-    font-size: 14px;
-    width: 80%;
+    font-size: 12px;
+    width: 90%;
   }
 
   .SearchBar-sort-options::after {
@@ -12,7 +12,7 @@
     transform: translateX(-50%);
     height: 1px;
     background: #fff;
-    width: 80%; 
+    width: 80%;
   }
 
   .SearchBar {
@@ -27,7 +27,7 @@
     margin-bottom: 20px;
     margin-left: 70px;
   }
-  
+
   .SearchBar-sort-options ul {
     justify-content: space-around;
   }
@@ -41,4 +41,3 @@
 .SearchBar-fields input {
   padding: 12px 3px;
 }
-
