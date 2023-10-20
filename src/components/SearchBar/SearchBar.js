@@ -68,12 +68,12 @@ const SearchBar = ({ searchYelp }) => {
       </div>
       <div className="SearchBar-fields">
         <input
-          placeholder="Search...ex: bar"
+          placeholder="Pizza, sushi, etc."
           onChange={handleTermChange}
           onKeyPress={handleKeyPress}
         />
         <input
-          placeholder="Location... ex: New York"
+          placeholder="New York, NY, etc."
           onChange={handleLocationChange}
           onKeyPress={handleKeyPress}
         />

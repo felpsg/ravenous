@@ -60,7 +60,7 @@
 }
 
 .SearchBar-fields input {
-  padding: 12px 25px !important;
+  padding: 12px 35px !important;
   font-size: 16px;
   color: #333;
   border: 1px solid #ccc;
@@ -73,6 +73,7 @@
 
 .SearchBar-fields input::placeholder {
   color: #999;
+  text-align: start;
 }
 
 .SearchBar-fields input:focus {
