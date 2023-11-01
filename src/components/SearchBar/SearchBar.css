@@ -25,7 +25,7 @@
   left: 47%;
   transform: translateX(-50%);
   height: 1px;
-  background: #fff;
+  background: #fff !important;
   width: 50%;
 }
 
@@ -69,10 +69,11 @@
   transition: border-color 0.3s;
   margin: 20px 15px;
   font-style: italic;
+  background-color: #fff !important;
 }
 
 .SearchBar-fields input::placeholder {
-  color: #999;
+  color: #000;
   text-align: start;
 }
 

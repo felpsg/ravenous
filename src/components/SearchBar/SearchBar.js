@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
-import './SearchBar.css';
-import './responsive.css';
+import TextField from '@material-ui/core/TextField';
+import debounce from 'lodash.debounce';
+import React, { useMemo, useState } from 'react';
+import { useForm } from 'react-hook-form';
 
+import './responsive.css';
+import './SearchBar.css';
 
 const SearchBar = ({ searchYelp }) => {
-  const [term, setTerm] = useState('');
-  const [location, setLocation] = useState('');
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   const [sortBy, setSortBy] = useState('best_match');
 
   const sortOptions = {
@@ -21,30 +27,29 @@ const SearchBar = ({ searchYelp }) => {
     return '';
   };
 
-  const handleSortByChange = (sortOptionKey) => {
-    setSortBy(sortOptions[sortOptionKey]);
-    if (term && location) {
-      searchYelp(term, location, sortOptions[sortOptionKey]);
+  const debouncedSearchYelp = useMemo(
+    () =>
+      debounce(
+        (term, location, sortBy) => searchYelp(term, location, sortBy),
+        300,
+      ),
+    [searchYelp],
+  );
+
+  const onSubmit = (data) => {
+    if (data.term.trim() && data.location.trim()) {
+      debouncedSearchYelp(data.term, data.location, sortBy);
     }
   };
 
-  const handleTermChange = (event) => {
-    setTerm(event.target.value);
-  };
-
-  const handleLocationChange = (event) => {
-    setLocation(event.target.value);
-  };
-
-  const handleSearch = (event) => {
-    searchYelp(term, location, sortBy);
-    event.preventDefault();
-  };
-
-  const handleKeyPress = (event) => {
-    if (event.key === 'Enter') {
-      searchYelp(term, location, sortBy);
-      event.preventDefault();
+  const handleSortByChange = (sortOptionKey) => {
+    setSortBy(sortOptions[sortOptionKey]);
+    if (errors.term && errors.location) {
+      debouncedSearchYelp(
+        errors.term.value,
+        errors.location.value,
+        sortOptions[sortOptionKey],
+      );
     }
   };
 
@@ -67,19 +72,29 @@ const SearchBar = ({ searchYelp }) => {
         </ul>
       </div>
       <div className="SearchBar-fields">
-        <input
+        <TextField
           placeholder="Pizza, sushi, etc."
-          onChange={handleTermChange}
-          onKeyPress={handleKeyPress}
+          {...register('term', { required: 'Term is required' })}
+          aria-label="Search term"
+          error={!!errors.term}
+          helperText={errors.term?.message}
+          inputProps={{ style: { color: 'black' } }}
+          FormHelperTextProps={{ style: { color: 'white', fontSize: '14px' } }}
         />
-        <input
+        <TextField
           placeholder="New York, NY, etc."
-          onChange={handleLocationChange}
-          onKeyPress={handleKeyPress}
+          {...register('location', { required: 'Location is required' })}
+          aria-label="Location"
+          error={!!errors.location}
+          helperText={errors.location?.message}
+          inputProps={{ style: { color: '#fff' } }}
+          FormHelperTextProps={{ style: { color: 'white', fontSize: '14px' } }}
         />
       </div>
       <div className="SearchBar-submit">
-        <button onClick={handleSearch}>Let's Go</button>
+        <button onClick={handleSubmit(onSubmit)} aria-label="Search">
+          Let's Go
+        </button>
       </div>
     </div>
   );
