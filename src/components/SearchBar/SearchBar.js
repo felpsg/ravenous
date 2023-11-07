@@ -1,6 +1,6 @@
 import TextField from '@material-ui/core/TextField';
 import debounce from 'lodash.debounce';
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import './responsive.css';
@@ -10,6 +10,7 @@ const SearchBar = ({ searchYelp }) => {
   const {
     register,
     handleSubmit,
+    getValues,
     formState: { errors },
   } = useForm();
   const [sortBy, setSortBy] = useState('best_match');
@@ -27,42 +28,36 @@ const SearchBar = ({ searchYelp }) => {
     return '';
   };
 
-  const debouncedSearchYelp = useMemo(
-    () =>
-      debounce(
-        (term, location, sortBy) => searchYelp(term, location, sortBy),
-        300,
-      ),
-    [searchYelp],
-  );
-
-  const onSubmit = (data) => {
-    if (data.term.trim() && data.location.trim()) {
-      debouncedSearchYelp(data.term, data.location, sortBy);
-    }
-  };
-
   const handleSortByChange = (sortOptionKey) => {
-    setSortBy(sortOptions[sortOptionKey]);
-    if (errors.term && errors.location) {
-      debouncedSearchYelp(
-        errors.term.value,
-        errors.location.value,
-        sortOptions[sortOptionKey],
-      );
+    const sortValue = sortOptions[sortOptionKey];
+    setSortBy(sortValue);
+
+    const values = getValues(); // Obtem os valores atuais do formulário
+    const term = values.term;
+    const location = values.location;
+
+    // Certifica-se de que os campos de termo e localização estão preenchidos
+    if (term && location) {
+      searchYelp(term, location, sortValue);
     }
   };
+
+  const handleSearch = (data) => {
+    searchYelp(data.term, data.location, sortBy);
+  };
+
+  // Debouncing da pesquisa para evitar chamadas excessivas à API enquanto o usuário digita
+  const debouncedSearchHandler = debounce(handleSearch, 300);
 
   return (
     <div className="SearchBar">
       <div className="SearchBar-sort-options">
         <ul>
           {Object.keys(sortOptions).map((sortOptionKey) => {
-            let sortByOptionValue = sortOptions[sortOptionKey];
             return (
               <li
                 className={getSortByClass(sortOptionKey)}
-                key={sortByOptionValue}
+                key={sortOptions[sortOptionKey]}
                 onClick={() => handleSortByChange(sortOptionKey)}
               >
                 {sortOptionKey}
@@ -75,24 +70,18 @@ const SearchBar = ({ searchYelp }) => {
         <TextField
           placeholder="Pizza, sushi, etc."
           {...register('term', { required: 'Term is required' })}
-          aria-label="Search term"
           error={!!errors.term}
           helperText={errors.term?.message}
-          inputProps={{ style: { color: 'black' } }}
-          FormHelperTextProps={{ style: { color: 'white', fontSize: '14px' } }}
         />
         <TextField
           placeholder="New York, NY, etc."
           {...register('location', { required: 'Location is required' })}
-          aria-label="Location"
           error={!!errors.location}
           helperText={errors.location?.message}
-          inputProps={{ style: { color: '#fff' } }}
-          FormHelperTextProps={{ style: { color: 'white', fontSize: '14px' } }}
         />
       </div>
       <div className="SearchBar-submit">
-        <button onClick={handleSubmit(onSubmit)} aria-label="Search">
+        <button type="submit" onClick={handleSubmit(debouncedSearchHandler)}>
           Let's Go
         </button>
       </div>
