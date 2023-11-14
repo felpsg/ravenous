@@ -1,21 +1,17 @@
-# Ravenoso
+# Ravenoso: Seu Guia de Restaurantes 🍽️
 
-Ravenoso é um aplicativo de recomendação de restaurantes, inspirado na funcionalidade principal do Yelp.
-## Demonstração ao Vivo
+Ravenoso é um aplicativo dinâmico de recomendação de restaurantes, oferecendo uma experiência semelhante ao Yelp, mas com um toque pessoal. Explore as opções gastronômicas locais com facilidade e estilo.
 
-Você pode ver o aplicativo em funcionamento aqui: [Link do Projeto](https://revenouss.netlify.app/)
+🔗 **Demonstração ao Vivo**: Confira o Ravenoso em ação [aqui](https://revenouss.netlify.app/).
 
-## Recursos
+## 🌟 Recursos
 
-- Pesquisa de empresas: os usuários podem pesquisar empresas locais inserindo uma palavra-chave e uma localização. Esta pesquisa é feita utilizando a API do Yelp para buscar os resultados.
+- **Pesquisa de Empresas**: Encontre restaurantes usando palavras-chave e localizações, com dados fornecidos pela API do Yelp.
+- **Classificação dos Resultados**: Organize os resultados por "Melhor Correspondência", "Avaliação Mais Alta" ou "Mais Comentados".
+- **Layout Responsivo**: Navegue facilmente em qualquer dispositivo graças ao layout de grade responsiva.
+- **Tema Claro e Escuro**: Escolha entre temas claro e escuro para uma experiência personalizada.
 
-- Classificação dos resultados: Os usuários têm a opção de classificar os resultados da pesquisa por "Melhor Correspondência", "Avaliação Mais Alta" e "Mais Comentados". O tipo de classificação selecionada afeta a ordem dos resultados exibidos.
-
-- Exibição dos resultados: Os resultados da pesquisa são exibidos em um layout de grade responsiva, permitindo uma navegação fácil em qualquer tamanho de tela.
-
-- Tema Claro e Escuro: O aplicativo apresenta um tema claro e escuro e um botão para alternar entre eles. Isso permite aos usuários escolher a aparência do aplicativo de acordo com suas preferências.
-
-## Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 
 - HTML
 - CSS
@@ -23,30 +19,40 @@ Você pode ver o aplicativo em funcionamento aqui: [Link do Projeto](https://rev
 - React
 - API do Yelp
 
-## Começando
+## 🚀 Começando
 
-Para rodar o projeto localmente, siga estas etapas:
+Para executar o Ravenoso localmente:
 
-1. Clone o repositório para o seu computador local.
-2. Instale as dependências necessárias com `npm install`.
-3. Crie um arquivo `.env` na raiz do projeto.
-4. Adicione a sua chave da API do Yelp ao arquivo `.env` com o seguinte formato:
+1. Clone o repositório: `git clone [URL do Repositório]`.
+2. Instale as dependências: `npm install`.
+3. Configure o arquivo `.env` na raiz do projeto com sua chave da API do Yelp:
 
-    - REACT_APP_API_KEY='sua-chave-api-aqui'
-    - Substitua 'sua-chave-api-aqui' pela sua chave de API real. Note que você precisará obter sua própria chave de API do Yelp ao se inscrever para um novo aplicativo no [portal de desenvolvedores do Yelp](https://www.yelp.com/developers/v3/manage_app).
+   ```
+   REACT_APP_API_KEY='sua-chave-api-aqui'
+   ```
 
-5. Inicie o servidor de desenvolvimento com `npm start`.
-6. Acesse o aplicativo em seu navegador em `http://localhost:3000`.
+   Obtenha sua chave da API do Yelp [aqui](https://www.yelp.com/developers/v3/manage_app).
 
-**Importante**: O arquivo `.env` é ignorado por padrão pelo arquivo `.gitignore` para evitar que suas chaves sejam adicionadas ao controle de versão.
+4. Inicie o servidor de desenvolvimento: `npm start`.
+5. Acesse `http://localhost:3000` no navegador.
 
-## Utilizando o Servidor Express para CORS
+⚠️ **Nota**: Mantenha suas chaves de API seguras e fora do controle de versão.
 
-Para lidar com as questões de CORS, configuramos um servidor Express conforme detalhado em um tutorial anterior. Este servidor funciona como um intermediário entre o front-end e a API Yelp, permitindo que as solicitações sejam feitas sem problemas de CORS. O código e as instruções para configurar o servidor Express podem ser encontrados [aqui](https://discuss.codecademy.com/t/ravenous-part-3-setting-the-search-bars-state/745278/3).
+## 🌐 CORS e Servidor Express
 
-**Nota**: Este setup é mais robusto e recomendado em vez de depender de serviços externos como o CORS Anywhere.
+Utilizamos um servidor Express para resolver questões de CORS. Confira as instruções para configuração [aqui](https://discuss.codecademy.com/t/ravenous-part-3-setting-the-search-bars-state/745278/3).
 
-## Contato
+## ⚙️ Solução de Problemas
 
-- Email: [felipetec.sso@gmail.com](mailto:seuemail@exemplo.com)
-- GitHub: [github.com/felpsg](https://github.com/seuusername)
+Caso encontre problemas com conflitos de dependências, especialmente relacionados ao `react-scripts` e `@material-ui/core`, utilize o seguinte comando:
+
+```bash
+npm install react-scripts --save --legacy-peer-deps
+```
+
+Esse comando instala `react-scripts` com a opção `--legacy-peer-deps`, ajudando a resolver incompatibilidades entre versões de pacotes.
+
+## 📬 Contato
+
+- ✉️ Email: [felipetec.sso@gmail.com](mailto:felipetec.sso@gmail.com)
+- 🐱 GitHub: [github.com/felpsg](https://github.com/felpsg)
