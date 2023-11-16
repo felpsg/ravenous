@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import './App.css';
+
 import BusinessList from './components/BusinnesList/BusinessList';
-import SearchBar from './components/SearchBar/SearchBar';
-import Yelp from './util/Yelp';
-import 'whatwg-fetch';
 import Footer from './components/Footer/footer';
+import SearchBar from './components/SearchBar/SearchBar';
 import ThemeToggle from './ThemeToggle';
+import Yelp from './util/Yelp';
+
+import './App.css';
+import 'whatwg-fetch';
 
 const business = {
   imageSrc:
@@ -25,11 +27,9 @@ const businesses = Array.from({ length: 9 }, () => business);
 function App() {
   const [businessesState, setBusinessesState] = useState(businesses);
 
-  const searchYelp = (term, location, sortBy) => {
-    Yelp.search(term, location, sortBy).then((businesses) => {
-      console.log(businesses);
-      setBusinessesState(businesses);
-    });
+  const searchYelp = async (term, location, sortBy) => {
+    const businesses = await Yelp.search(term, location, sortBy);
+    setBusinessesState(businesses);
   };
 
   return (
